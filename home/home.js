@@ -39,7 +39,7 @@ function loadPage(url) {
     if (location.href == url) return;
 
 
-    window.history.replaceState(url, '', url);
+    // window.history.replaceState(url, '', url);
 
     
     $('#middle').load(`${url}/${url}.html`, function(responseTxt, statusTxt, xhr){
