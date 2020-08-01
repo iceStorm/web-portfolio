@@ -1,57 +1,26 @@
-$(document).ready(function() {
 
 
-    document.querySelectorAll('header ul li a').forEach((el, i) => {
-        el.onclick = function(event) {
-            event.preventDefault();
-
-            resetActivePage();
-            el.classList.toggle('active-page');
-
-            let boxRect = el.getClientRects().item(0);
-            console.log(boxRect);
-
-            $('#nav-indicator').css('left', boxRect.left + boxRect.width / 2);
-            loadPage(el.getAttribute("href"));
-        }
-    });
-
-
+particlesJS.load('particle-js', './home/particle.json', function() {
+    console.log('%ccallback - particles.js config loaded', 'color: green');
 });
 
 
 
-function resetActivePage() {
-    $('header ul li a').each(function(index, el) {
-        if ($(el).hasClass('active-page')) {
-            $(el).removeClass('active-page');
-        }
-    });
-}
+(function() {
 
-function initActivePageIndicator() {
-    document.querySelectorAll('header ul li a')[0].click();
-}
+    const strings = [
+        "Hi, I'm Anh Tuan.",
+        " ",
+        "I'm a sophomore student at Ba Ria - Vung Tau University.",
+        "I'm passionate about Android, WinForm & Web development.",
+    ];
 
+    // Typist.start('.typing', strings, 50);
 
+    new TypeIt(".typing", {
+        strings: strings,
+        speed: 25,
+        loop: false,
+      }).go();
 
-function loadPage(url) {
-    if (location.href == url) return;
-
-
-    // window.history.replaceState(url, '', url);
-
-    
-    $('#middle').load(`${url}/${url}.html`, function(responseTxt, statusTxt, xhr){
-        
-    });
-}
-
-
-
-function updateActivePageIndicator(e) {
-    let activeTag = document.querySelectorAll('header ul li a.active-page')[0];
-    let clientRects = activeTag.getClientRects().item(0);
-
-    $('#nav-indicator').css('left', clientRects.left + clientRects.width / 2);
-}
+})();
