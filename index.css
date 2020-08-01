@@ -1,0 +1,84 @@
+@import url(../libs/GoogleSansWebfont/stylesheet.css);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #cecece;
+  font-family: 'Google Sans';
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+}
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  backdrop-filter: blur(15px);
+  background-color: rgba(255, 255, 255, 0.925);
+  box-shadow: 0 1px 7px 0px #a7a7a7;
+}
+header nav > a {
+  width: 40px;
+}
+header nav > a img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+header nav > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+header nav > ul li {
+  list-style: none;
+}
+header nav > ul li a {
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 20px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0);
+  transition: all .25s linear;
+}
+header nav > ul li a:hover {
+  color: #0044ff;
+}
+header nav > ul li a.active-page {
+  color: #00f;
+}
+header #nav-indicator {
+  width: 75px;
+  height: 3px;
+  background: #00f;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  position: absolute;
+  top: 80%;
+  left: 0;
+  transform: translateX(-50%);
+  transition: all .45s ease-in-out;
+}
+
+#middle {
+  padding-top: 60px;
+  background: url(./assets/backgrounds/annapurna-trek-nepal-nature-4k-to-1920x1080.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  color: white;
+}

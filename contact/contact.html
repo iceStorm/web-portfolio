@@ -1,1 +1,51 @@
-<h1>Contact Us</h1>
+
+
+
+<div id="contact">
+    <div id="normal">
+        <form action="#" method="post" onsubmit="e.preventDefault(); return submitForm(this);">
+            
+
+            <div id="inputs">
+                <input type="text" name="txtName" id="txtName" placeholder="Name" required autocomplete="off"
+                    oninvalid="setCustomValidity('Please enter your name')"
+                    oninput="setCustomValidity('')">
+        
+                <input type="email" name="txtEmail" id="txtEmail" placeholder="Email" required autocomplete="off">
+            
+                <input type="text" name="txtSubject" id="txtSubject" placeholder="Subject" required autocomplete="off"
+                    oninvalid="setCustomValidity('Please enter email subject')"
+                    oninput="setCustomValidity('')">
+            </div>
+            
+        
+            <textarea type="text" name="txtMessage" id="txtMessage" placeholder="Message" required autocomplete="off"
+                oninvalid="setCustomValidity('Please enter email\'s message')"
+                oninput="setCustomValidity('')">
+            </textarea>
+        
+
+            <div>
+                <button type="submit">Send</button>
+            </div>
+        </form>
+        
+        
+        <div id="social-networks">
+            <img src="../assets/icons/facebook_icon_130940.png" alt="face-icon">
+            <img src="../assets/icons/insta.png" alt="instagram-icon">
+            <img src="../assets/icons/twitter.webp" alt="twitter-icon">
+        </div>
+    </div>
+
+
+    <div id="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.9357340993065!2d107.07310521461852!3d10.347023892613773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31756f92f1c25fb3%3A0xc773e46bc4ab4e36!2zMTAgVHLhuqduIE5ndXnDqm4gSMOjbiwgUGjGsOG7nW5nIDEsIFRow6BuaCBwaOG7kSBWxaluZyBU4bqndSwgQsOgIFLhu4thIC0gVsWpbmcgVMOgdSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1596309740164!5m2!1svi!2s"
+            frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+            Google Maps
+        </iframe>
+    </div>
+</div>
+
+
+<script src="./contact/contact.js"></script>

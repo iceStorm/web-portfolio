@@ -1,0 +1,129 @@
+@import '../common/reset';
+@import '../common/fonts';
+@import '../common/dimens';
+@import '../common/colors';
+@import '../common/anims';
+
+
+
+#contact {
+    width: 90%;
+    // background: rgb(212, 212, 212);
+    padding: 10px;
+
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 50px;
+}
+
+
+#normal {
+    
+    form {
+        padding: 15px;
+        border-radius: 3px;
+
+        backdrop-filter: blur(15px);
+        background-color: rgba(255, 255, 255, 0.753);
+
+        display: grid;
+        grid-template-rows: 2fr 2fr 1fr;
+        row-gap: 10px;
+
+
+        div#inputs {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+
+            > *:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+        
+        input, textarea {
+            font-size: 16px;
+            font-family: 'Google Sans';
+            display: block;
+            width: 100%;
+            padding: 10px 5px;
+
+            border: 1px solid rgb(197, 197, 197);
+
+            &:focus {
+                outline: none;
+            }
+        }
+    
+        textarea {
+            resize: none;
+        }
+        
+
+        div {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: flex-end;
+
+            button {
+                font-family: 'Google Sans';
+                font-size: 16px;
+                cursor: pointer;
+                border: none;
+
+                padding: 10px 20px;
+
+                color: white;
+                background: linear-gradient(to bottom right, $primary-color, rgb(74, 163, 252));
+            }
+        }
+    }
+
+
+
+    #social-networks {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 3px;
+
+        backdrop-filter: blur(15px);
+        background-color: rgba(255, 255, 255, 0.753);
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-self: center;
+
+        img {
+            width: 30px;
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+#map {
+    color: #000;
+    border-radius: 3px;
+    overflow: hidden;
+
+    backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255, 0.753);
+
+
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
