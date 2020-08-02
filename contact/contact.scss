@@ -26,6 +26,8 @@
 #normal {
     
     form {
+        animation: zoomIn .75s ease-in-out;
+
         padding: 15px;
         border-radius: 3px;
 
@@ -47,6 +49,19 @@
             > *:not(:last-child) {
                 margin-bottom: 10px;
             }
+
+
+            // > input {
+            //     $delay: 100;
+            //     @for $i from 1 through 3 {
+            //         &:nth-child(#{$i}) {
+            //             opacity: 0;
+            //             animation: slideDown .75s linear #{$delay}ms forwards;
+            //         }
+
+            //         $delay: $delay + 200;
+            //     }
+            // }
         }
         
         input, textarea {
@@ -54,7 +69,7 @@
             font-family: 'Google Sans';
             display: block;
             width: 100%;
-            padding: 10px 5px;
+            padding: 10px 10px;
 
             border: 1px solid rgb(197, 197, 197);
 
@@ -65,6 +80,8 @@
     
         textarea {
             resize: none;
+            // opacity: 0;
+            // animation: slideDown .75s linear 700ms forwards;
         }
         
 
@@ -92,6 +109,8 @@
 
 
     #social-networks {
+        animation: zoomIn .75s ease-in-out;
+
         margin-top: 20px;
         padding: 15px;
         border-radius: 3px;
@@ -114,6 +133,8 @@
 
 
 #map {
+    position: relative;
+    
     color: #000;
     border-radius: 3px;
     overflow: hidden;
@@ -122,8 +143,60 @@
     background-color: rgba(255, 255, 255, 0.753);
 
 
+    background: url('../assets/backgrounds/Screenshot_1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+    animation: zoomIn .75s ease-in-out;
+
+
     iframe {
         width: 100%;
         height: 100%;
+    }
+
+
+    a {
+        text-decoration: none;
+        color: #000;
+        border-radius: 3px;
+        background-color: white;
+        box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.178);
+
+        padding: 10px 20px;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}
+
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.75);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
     }
 }

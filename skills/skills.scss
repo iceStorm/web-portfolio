@@ -1,0 +1,22 @@
+
+
+#myCanvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: #ff0;
+
+
+    ul {
+        li {
+            list-style: none;
+    
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+}

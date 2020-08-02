@@ -9,10 +9,10 @@ particlesJS.load('particle-js', './home/particle.json', function() {
 (function() {
 
     const strings = [
-        "Hi, I'm Anh Tuan.",
+        "Hi, I'm Nguyen Anh Tuan.",
         " ",
         "I'm a sophomore student at Ba Ria - Vung Tau University.",
-        "I'm passionate about Android, WinForm & Web development.",
+        "I'm passionate about Mobile, Desktop & Web development.",
     ];
 
     // Typist.start('.typing', strings, 50);

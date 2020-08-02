@@ -24,6 +24,8 @@ header {
     
 
     nav {
+        user-select: none;
+
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -108,12 +110,20 @@ header {
 #middle {
     padding-top: 60px;
 
-    background: url(./assets/backgrounds/annapurna-trek-nepal-nature-4k-to-1920x1080.jpg);
+    background: url(./assets/backgrounds/macbook-laptop-coding.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 
     height: 100vh;
-
+    transform: scale(0.5);
+    transition: all .75s;
+    filter: blur(10px) grayscale(1);
 
     color: white;
+}
+
+
+#middle.animated {
+    transform: scale(1);
+    filter: none;
 }

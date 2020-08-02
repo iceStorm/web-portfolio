@@ -47,13 +47,14 @@ function updateActivePageIndicator(e) {
 
 
 function loadPage(url) {
-    if (location.href == url) return;
 
+    $('#middle').toggleClass('animated');
 
-    // window.history.replaceState(url, '', url);
-
+    setTimeout(() => {
+        $('#middle').load(`${url}/${url}.html`, function(responseTxt, statusTxt, xhr) {
+            $('#middle').toggleClass('animated'); 
+        });
+    }, 750);
     
-    $('#middle').load(`${url}/${url}.html`, function(responseTxt, statusTxt, xhr){
-        
-    });
+
 }
