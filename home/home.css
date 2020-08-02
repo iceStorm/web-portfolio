@@ -1,6 +1,10 @@
+#home {
+  color: white;
+}
+
 #particle-js {
+  background-attachment: fixed;
   position: relative;
-  height: 100%;
 }
 #particle-js > #typing-text {
   position: absolute;
@@ -12,4 +16,5 @@
 }
 #particle-js > #typing-text .typing {
   text-shadow: 1px 1px 5px black;
+  font-size: 30px;
 }

@@ -1,29 +1,41 @@
 $(document).ready(function() {
 
-    // const swup = new Swup();
 
-
-    document.querySelectorAll('header ul li a').forEach((el, i) => {
+    document.querySelectorAll('header ul li a').forEach((el, key, parent) => {
         el.onclick = function(event) {
-            event.preventDefault();
+            // event.preventDefault();
 
-            resetActivePage();
+
+            resetActivePageIndicator();
             el.classList.toggle('active-page');
 
             let boxRect = el.getClientRects().item(0);
-            console.log(boxRect);
+            // console.log(boxRect);
 
             $('#nav-indicator').css('left', boxRect.left + boxRect.width / 2);
-            loadPage(el.getAttribute("link"));
+            scrollToSection(el.getAttribute("href"));
         }
     });
 
+
+
+    let navHeight = document.querySelector('header').clientHeight;
+    document.querySelectorAll('section').forEach((el, key, parent) => {
+
+        if (el.getAttribute("id") == "home") {
+            // el.style.paddingBottom = `${navHeight}px`;
+            // navHeight += 30;
+            return;
+        }
+
+        el.style.paddingTop = `${navHeight}px`;
+    });
 
 });
 
 
 
-function resetActivePage() {
+function resetActivePageIndicator() {
     $('header ul li a').each(function(index, el) {
         if ($(el).hasClass('active-page')) {
             $(el).removeClass('active-page');
@@ -31,9 +43,8 @@ function resetActivePage() {
     });
 }
 
-
 function initActivePageIndicator() {
-    document.querySelectorAll('header ul li a')[0].click();
+    // document.querySelectorAll('header ul li a')[0].click();
 }
 
 function updateActivePageIndicator(e) {
@@ -46,15 +57,25 @@ function updateActivePageIndicator(e) {
 
 
 
-function loadPage(url) {
+function scrollToSection(hash) {
+    console.log(hash, $(hash).offset().top);
 
-    $('#middle').toggleClass('animated');
-
-    setTimeout(() => {
-        $('#middle').load(`${url}/${url}.html`, function(responseTxt, statusTxt, xhr) {
-            $('#middle').toggleClass('animated'); 
-        });
-    }, 750);
+    // $('main').animate({
+    //     scrollTop: $(hash).offset().top
+    // },
+    // 750, 'swing', () => {
+    //     console.log('Finish scroll');
+    // });
     
+}
 
+
+
+function loadPageSections() {
+    document.querySelectorAll('section').forEach((el, key, parent) => {
+        let id = el.getAttribute("id");
+        $(`#${id}`).load(`${id}/${id}.html`);
+    });
+
+    console.log('Load sections content completed');
 }

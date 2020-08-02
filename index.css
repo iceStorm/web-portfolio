@@ -1,4 +1,5 @@
 @import url(../libs/GoogleSansWebfont/stylesheet.css);
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +9,8 @@
 body {
   background-color: #cecece;
   font-family: 'Google Sans';
+  height: 100vh;
+  overflow: hidden;
 }
 
 header {
@@ -65,7 +68,7 @@ header nav > ul li a.active-page {
 header #nav-indicator {
   width: 75px;
   height: 3px;
-  background: #00f;
+  background: transparent;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   position: absolute;
@@ -75,19 +78,24 @@ header #nav-indicator {
   transition: all .45s ease-in-out;
 }
 
-#middle {
-  padding-top: 60px;
-  background: url(./assets/backgrounds/macbook-laptop-coding.jpg);
+main {
+  background: url("./assets/backgrounds/7e95a1c2f461796527ce1696c66a22b5.jpg");
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  transform: scale(0.5);
-  transition: all .75s;
-  filter: blur(10px) grayscale(1);
-  color: white;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
-
-#middle.animated {
-  transform: scale(1);
-  filter: none;
+main section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  scroll-snap-align: center;
+  color: white;
 }

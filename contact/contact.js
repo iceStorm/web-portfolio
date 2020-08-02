@@ -1,6 +1,6 @@
 
 
-function submitForm(e) {
+function submitForm() {
     alert(5);
 
 

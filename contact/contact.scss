@@ -7,71 +7,79 @@
 
 
 #contact {
-    width: 90%;
-    // background: rgb(212, 212, 212);
-    padding: 10px;
-
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    // position: relative;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
 
 
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    column-gap: 50px;
+    grid-template-columns: 1.5fr 2fr;
+    // column-gap: 50px;
 }
 
 
 #normal {
-    
-    form {
-        animation: zoomIn .75s ease-in-out;
+    // background: #cf5;
 
-        padding: 15px;
-        border-radius: 3px;
+    
+    $form-radius: 4px;
+    form {
+        height: 100%;
+        max-height: 100%;
+        padding: 25px 40px;
+        border-radius: 0px;
 
         backdrop-filter: blur(15px);
-        background-color: rgba(255, 255, 255, 0.753);
+        background-color: rgba(255, 255, 255, 0.151);
 
-        display: grid;
-        grid-template-rows: 2fr 2fr 1fr;
-        row-gap: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
 
 
         div#inputs {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
+            // background: #000;
 
-
-            > *:not(:last-child) {
-                margin-bottom: 10px;
+            display: grid;
+            row-gap: 10px;
+            column-gap: 10px;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto;
+            grid-template-areas:
+                "txtName txtEmail"
+                "txtSubject txtSubject"
+                "txtMessage txtMessage";
+                
+            > #txtName {
+                grid-area: txtName;
             }
 
+            > #txtEmail {
+                grid-area: txtEmail;
+            }
 
-            // > input {
-            //     $delay: 100;
-            //     @for $i from 1 through 3 {
-            //         &:nth-child(#{$i}) {
-            //             opacity: 0;
-            //             animation: slideDown .75s linear #{$delay}ms forwards;
-            //         }
-
-            //         $delay: $delay + 200;
-            //     }
-            // }
+            > #txtSubject {
+                grid-area: txtSubject;
+            }
+            
+            > #txtMessage {
+                grid-area: txtMessage;
+            }
         }
         
         input, textarea {
             font-size: 16px;
             font-family: 'Google Sans';
+
+            background: rgba(255, 255, 255, 0.822);
+            border: 1px solid rgb(197, 197, 197);
+            border-radius: $form-radius;
+
             display: block;
             width: 100%;
             padding: 10px 10px;
-
-            border: 1px solid rgb(197, 197, 197);
 
             &:focus {
                 outline: none;
@@ -80,11 +88,13 @@
     
         textarea {
             resize: none;
-            // opacity: 0;
-            // animation: slideDown .75s linear 700ms forwards;
         }
         
+        h1 {
+            font-size: 30px;
+        }
 
+        // button
         div {
             width: 100%;
             display: flex;
@@ -97,35 +107,13 @@
                 font-size: 16px;
                 cursor: pointer;
                 border: none;
+                border-radius: $form-radius;
 
-                padding: 10px 20px;
+                padding: 10px 40px;
 
                 color: white;
                 background: linear-gradient(to bottom right, $primary-color, rgb(74, 163, 252));
             }
-        }
-    }
-
-
-
-    #social-networks {
-        animation: zoomIn .75s ease-in-out;
-
-        margin-top: 20px;
-        padding: 15px;
-        border-radius: 3px;
-
-        backdrop-filter: blur(15px);
-        background-color: rgba(255, 255, 255, 0.753);
-
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-self: center;
-
-        img {
-            width: 30px;
-            cursor: pointer;
         }
     }
 }
@@ -136,7 +124,7 @@
     position: relative;
     
     color: #000;
-    border-radius: 3px;
+    border-radius: 0px;
     overflow: hidden;
 
     backdrop-filter: blur(15px);
@@ -146,9 +134,6 @@
     background: url('../assets/backgrounds/Screenshot_1.png');
     background-size: cover;
     background-repeat: no-repeat;
-
-
-    animation: zoomIn .75s ease-in-out;
 
 
     iframe {
@@ -175,6 +160,27 @@
         align-items: center;
     }
 }
+
+
+#social-networks {
+    // margin-top: 20px;
+    padding: 15px;
+    border-radius: 3px;
+
+    backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255, 0.753);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-self: center;
+
+    img {
+        width: 30px;
+        cursor: pointer;
+    }
+}
+
 
 
 @keyframes zoomIn {

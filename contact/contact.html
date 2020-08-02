@@ -1,53 +1,59 @@
 
+<div id="normal">
+    <form enctype="text/plain" action="mailto:anhtuan3675@outlook.com">
+
+        <h1>Contact me</h1>
+        <span>
+            I am interested in freelance opportunities – especially ambitious or large projects. 
+            However, if you have other request or question, don’t hesitate to contact me using below form either.
+        </span>
 
 
-<div id="contact">
-    <div id="normal">
-        <form action="#" method="post" onsubmit="e.preventDefault(); return submitForm(this);">
-            
-
-            <div id="inputs">
-                <input type="text" name="txtName" id="txtName" placeholder="Name" required autocomplete="off"
-                    oninvalid="setCustomValidity('Please enter your name')"
-                    oninput="setCustomValidity('')">
-        
-                <input type="email" name="txtEmail" id="txtEmail" placeholder="Email" required autocomplete="off">
-            
-                <input type="text" name="txtSubject" id="txtSubject" placeholder="Subject" required autocomplete="off"
-                    oninvalid="setCustomValidity('Please enter email subject')"
-                    oninput="setCustomValidity('')">
-            </div>
-            
-        
-            <textarea type="text" name="txtMessage" id="txtMessage" placeholder="Message" required autocomplete="off"
-                oninvalid="setCustomValidity('Please enter email\'s message')"
+        <div id="inputs">
+            <input type="text" id="txtName" placeholder="Name" required autocomplete="off"
+                oninvalid="setCustomValidity('Please enter your name')"
                 oninput="setCustomValidity('')">
-            </textarea>
+    
+            <input type="email" id="txtEmail" placeholder="Email" required autocomplete="off">
         
-
-            <div>
-                <button type="submit">Send</button>
-            </div>
-        </form>
-        
-        
-        <div id="social-networks">
-            <a href="https://www.messenger.com/t/hauduedaiduong" target="_blank"><img src="../assets/icons/facebook-messenger-2-569346.webp" alt="face-icon"></a>
-            <a href="#" target="_blank"><img src="../assets/icons/insta.png" alt="instagram-icon"></a>
-            <a href="#" target="_blank"><img src="../assets/icons/twitter.webp" alt="twitter-icon"></a>
+            <input type="text" name="subject" id="txtSubject" placeholder="Subject" required autocomplete="off"
+                oninvalid="setCustomValidity('Please enter email subject')"
+                oninput="setCustomValidity('')">
+                
+            <textarea type="text" rows="10" name="body" id="txtMessage" placeholder="Message" required autocomplete="off"
+                oninvalid="setCustomValidity('Please enter email\'s message')"
+                oninput="setCustomValidity('')"></textarea>
         </div>
-    </div>
 
-
-    <div id="map">
-        <a href="https://goo.gl/maps/MvnHvwytD5NQYEwE7" target="_blank" rel="noopener noreferrer">View on Google Maps
-            &nbsp;
-            <span class="material-icons">
-                open_in_new
-                </span>
-        </a>
-    </div>
+        <div>
+            <button type="submit">Send</button>
+        </div>
+    </form>
 </div>
 
 
+<div id="map">
+    <!-- <a href="https://goo.gl/maps/MvnHvwytD5NQYEwE7" target="_blank" rel="noopener noreferrer">View on Google Maps
+        &nbsp;
+        <span class="material-icons">
+            open_in_new
+            </span>
+    </a> -->
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.9357340993065!2d107.07310521461852!3d10.347023892613773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31756f92f1c25fb3%3A0xc773e46bc4ab4e36!2zMTAgVHLhuqduIE5ndXnDqm4gSMOjbiwgUGjGsOG7nW5nIDEsIFRow6BuaCBwaOG7kSBWxaluZyBU4bqndSwgQsOgIFLhu4thIC0gVsWpbmcgVMOgdSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1596384042927!5m2!1svi!2s" 
+    frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</div>
+
+
+
+
+<!-- <div id="social-networks">
+    <a href="https://www.messenger.com/t/hauduedaiduong" target="_blank"><img src="../assets/icons/facebook-messenger-2-569346.webp" alt="face-icon"></a>
+    <a href="#" target="_blank"><img src="../assets/icons/insta.png" alt="instagram-icon"></a>
+    <a href="#" target="_blank"><img src="../assets/icons/twitter.webp" alt="twitter-icon"></a>
+</div> -->
+
+
+
+<link rel="stylesheet" href="./contact/contact.css">
 <script src="./contact/contact.js"></script>
