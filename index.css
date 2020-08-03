@@ -28,8 +28,8 @@ header nav {
   align-items: center;
   padding: 10px 30px;
   backdrop-filter: blur(15px);
-  background-color: rgba(255, 255, 255, 0.925);
-  box-shadow: 0 1px 7px 0px #a7a7a7;
+  background-color: rgba(255, 255, 255, 0.911);
+  box-shadow: 0 1px 7px 0px rgba(167, 167, 167, 0.418);
 }
 header nav > a {
   width: 40px;
@@ -68,34 +68,28 @@ header nav > ul li a.active-page {
 header #nav-indicator {
   width: 75px;
   height: 3px;
-  background: transparent;
+  background: #00f;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   position: absolute;
-  top: 80%;
-  left: 0;
+  top: 50px;
+  left: 400px;
   transform: translateX(-50%);
   transition: all .45s ease-in-out;
 }
 
 main {
-  background: url("./assets/backgrounds/7e95a1c2f461796527ce1696c66a22b5.jpg");
+  background: url("./assets/backgrounds/happy-mood-mountain-nature.jpeg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  transition: all 0.75s ease-in-out;
+  filter: none;
   width: 100%;
   height: 100%;
-  position: relative;
-  top: 0;
-  left: 0;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
 }
-main section {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  scroll-snap-align: center;
-  color: white;
+
+main.animated {
+  transform: scale(0.5);
+  filter: blur(15px) grayscale(1);
 }

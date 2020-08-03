@@ -22,6 +22,8 @@ header {
     left: 0;
     z-index: 1;
     
+    // display: none;
+    // visibility: hidden;
     width: 100%;
 
     
@@ -37,8 +39,8 @@ header {
         padding: $home-nav-ver-padding 30px;
 
         backdrop-filter: blur(15px);
-        background-color: rgba(255, 255, 255, 0.925);
-        box-shadow: 0 1px 7px 0px rgb(167, 167, 167);
+        background-color: rgba(255, 255, 255, 0.911);
+        box-shadow: 0 1px 7px 0px rgba(167, 167, 167, 0.418);
 
 
 
@@ -95,14 +97,14 @@ header {
         width: 75px;
         height: 3px;
 
-        // background: $primary-active-color;
-        background: transparent;
+        background: $primary-active-color;
+        // background: transparent;
         border-top-left-radius: 30px;
         border-top-right-radius: 30px;
 
         position: absolute;
-        top: 80%;
-        left: 0;
+        top: 50px;
+        left: 400px;
 
         transform: translateX(-50%);
         transition: all .45s ease-in-out;
@@ -112,35 +114,22 @@ header {
 
 
 main {
-    background: url('./assets/backgrounds/7e95a1c2f461796527ce1696c66a22b5.jpg');
+    background: url('./assets/backgrounds/happy-mood-mountain-nature.jpeg');
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
 
 
+    transition: all 0.75s ease-in-out;
+    filter: none;
+
+
     width: 100%;
     height: 100%;
-    position: relative;
-    top: 0;
-    left: 0;
-
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-    
-    
-    section {
-        width: 100%;
-        height: 100vh;
-
-        position: relative;
-        scroll-snap-align: center;
-
-        color: white;
-
-        // &:not(#home) {
-        //     padding-top: 65px;
-        // }
-    }
 }
 
+
+main.animated {
+    transform: scale(0.5);
+    filter: blur(15px) grayscale(1);
+}

@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-#contact {
+#middle {
   display: grid;
   grid-template-columns: 1.5fr 2fr;
 }
@@ -16,8 +16,7 @@
   max-height: 100%;
   padding: 25px 40px;
   border-radius: 0px;
-  backdrop-filter: blur(15px);
-  background-color: rgba(255, 255, 255, 0.151);
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -46,7 +45,7 @@
 #normal form input, #normal form textarea {
   font-size: 16px;
   font-family: 'Google Sans';
-  background: rgba(255, 255, 255, 0.822);
+  background: rgba(255, 255, 255, 0.89);
   border: 1px solid #c5c5c5;
   border-radius: 4px;
   display: block;
@@ -61,6 +60,9 @@
 }
 #normal form h1 {
   font-size: 30px;
+}
+#normal form span {
+  text-align: center;
 }
 #normal form div {
   width: 100%;
@@ -78,6 +80,7 @@
   padding: 10px 40px;
   color: white;
   background: linear-gradient(to bottom right, #0044ff, #4aa3fc);
+  box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.404);
 }
 
 #map {
@@ -87,7 +90,7 @@
   overflow: hidden;
   backdrop-filter: blur(15px);
   background-color: rgba(255, 255, 255, 0.753);
-  background: url("../assets/backgrounds/Screenshot_1.png");
+  background: url("../assets/backgrounds/map.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -103,8 +106,8 @@
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.178);
   padding: 10px 20px;
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 20px;
+  left: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;

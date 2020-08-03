@@ -3,7 +3,7 @@ $(document).ready(function() {
 
     document.querySelectorAll('header ul li a').forEach((el, key, parent) => {
         el.onclick = function(event) {
-            // event.preventDefault();
+            event.preventDefault();
 
 
             resetActivePageIndicator();
@@ -13,24 +13,15 @@ $(document).ready(function() {
             // console.log(boxRect);
 
             $('#nav-indicator').css('left', boxRect.left + boxRect.width / 2);
-            scrollToSection(el.getAttribute("href"));
+            loadPage(el.getAttribute("href"));
         }
     });
 
 
 
     let navHeight = document.querySelector('header').clientHeight;
-    document.querySelectorAll('section').forEach((el, key, parent) => {
-
-        if (el.getAttribute("id") == "home") {
-            // el.style.paddingBottom = `${navHeight}px`;
-            // navHeight += 30;
-            return;
-        }
-
-        el.style.paddingTop = `${navHeight}px`;
-    });
-
+    console.log(navHeight);
+    $('#middle').css('paddingTop', navHeight);
 });
 
 
@@ -44,12 +35,14 @@ function resetActivePageIndicator() {
 }
 
 function initActivePageIndicator() {
-    // document.querySelectorAll('header ul li a')[0].click();
+    document.querySelectorAll('header ul li a')[0].click();
 }
 
 function updateActivePageIndicator(e) {
     let activeTag = document.querySelectorAll('header ul li a.active-page')[0];
     let clientRects = activeTag.getClientRects().item(0);
+
+    window.history.replaceState("", "", activeTag.getAttribute('href'));
 
     $('#nav-indicator').css('left', clientRects.left + clientRects.width / 2);
 }
@@ -57,25 +50,17 @@ function updateActivePageIndicator(e) {
 
 
 
-function scrollToSection(hash) {
-    console.log(hash, $(hash).offset().top);
+function loadPage(hash) {
+    console.log(hash);
+    let path = `${hash.split('#')[1]}/${hash.split('#')[1]}.html`;
 
-    // $('main').animate({
-    //     scrollTop: $(hash).offset().top
-    // },
-    // 750, 'swing', () => {
-    //     console.log('Finish scroll');
-    // });
-    
-}
+    $('main').toggleClass('animated');
+    setTimeout(() => {
+            
+        $('main').load(path, () => {
+            $('main').toggleClass('animated');
+        });
+        
+    }, 750);
 
-
-
-function loadPageSections() {
-    document.querySelectorAll('section').forEach((el, key, parent) => {
-        let id = el.getAttribute("id");
-        $(`#${id}`).load(`${id}/${id}.html`);
-    });
-
-    console.log('Load sections content completed');
 }
