@@ -9,16 +9,6 @@ TweenMax.to("#info-avatar", 1, {scale: 0, ease:Power2.easeOut});
 TweenMax.to("#info-avatar", 1, {scale: 1, ease:Bounce.easeOut, delay:1 / 4});
 
 
-rule = CSSRulePlugin.getRule("#middle #info:before");
-gsap.to(rule, {
-    ease:Bounce.easeOut,
-    duration: 2,
-    cssRule: {
-        scale: 1
-    }
-})
-
-
 document.querySelectorAll('.skill-bar-experience').forEach((el, index, parent) => {
     let width = el.children.item(1);
     // console.log(width.innerHTML);
