@@ -4,26 +4,103 @@
   justify-content: center;
   align-items: center;
 }
-#middle #wave {
+
+#projects {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-gap: 1px;
+}
+#projects .cell {
+  position: relative;
+  overflow: hidden;
+  transition: .75s align ease-in-out;
+  background-repeat: no-repeat !important;
+  background-size: fit !important;
+}
+#projects .cell::before {
+  content: attr(data-type);
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  background: rgba(0, 0, 0, 0);
   position: absolute;
-  z-index: 0;
+  top: 20px;
+  left: -20px;
+  z-index: 2;
+  width: 100px;
+  transform: rotate(-45deg);
+}
+#projects .cell:after {
+  content: '';
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 75px 75px 0 0;
+  border-color: #01aa47 transparent transparent transparent;
 }
-#middle #wave:after {
-  content: '';
-  background-color: #fff;
+#projects .cell-thumb {
   position: absolute;
-  bottom: -1;
-  left: -1;
-  right: 0;
+  top: 0;
+  left: 0;
+  z-index: 1;
   width: 100%;
   height: 100%;
-  background: url(../assets/header-shape.svg);
-  background-repeat: no-repeat;
-  background-position: bottom left;
-  background-size: 111%;
-  transform: rotate(180deg);
+  transition: .35s all ease-in-out;
+}
+#projects .cell-thumb::before {
+  content: attr(data-type);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.432);
+  transition: .35s all ease-in-out;
+}
+#projects .cell a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: none;
+  text-decoration: none;
+  color: white;
+}
+#projects .cell a div {
+  box-shadow: 0 0 15px 0px rgba(43, 43, 43, 0.24);
+  background: dodgerblue;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  text-align: center;
+}
+#projects .cell:hover {
+  background-size: 150% 150% !important;
+}
+#projects .cell:hover > *:nth-child(1) {
+  transform: scale(1.5);
+}
+#projects .cell:hover > *:nth-child(1):before {
+  background: rgba(0, 0, 0, 0.068);
+}
+#projects .cell:hover a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

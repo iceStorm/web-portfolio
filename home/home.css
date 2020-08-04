@@ -8,6 +8,7 @@
 
 #middle {
   color: white;
+  overflow: hidden;
 }
 
 #particle-js {

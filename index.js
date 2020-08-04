@@ -34,8 +34,8 @@ function resetActivePageIndicator() {
     });
 }
 
-function initActivePageIndicator() {
-    document.querySelectorAll('header ul li a')[0].click();
+function initActivePageIndicator(pageIndex) {
+    document.querySelectorAll('header ul li a')[pageIndex].click();
 }
 
 function updateActivePageIndicator(e) {
