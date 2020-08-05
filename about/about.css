@@ -1,6 +1,7 @@
 #middle {
   padding-top: 150px !important;
   position: relative;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr;
   background: white;

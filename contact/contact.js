@@ -1,25 +1,63 @@
 
 
-function submitForm() {
-    alert(5);
-    return false;
+language = 'vi';
+formInvalidMessages = {
+    txtName: {
+        en: 'Name only accepts letters, at least 3 characters',
+        vi: 'Họ tên chỉ chứa chữ cái, tối thiểu 3 ký tự'
+    },
+    txtSubject: {
+        en: 'Please fill out this field.',
+        vi: 'Vui lòng điền vào Tiêu đề'
+    },
+    txtMessage: {
+        en: 'Please fill out this field.',
+        vi: 'Vui lòng điền vào nội dung'
+    },
+    txtEmail: {
+        en: 'Please enter a valid email, eg. anhtuan3675@outlook.com',
+        vi: 'Vui lòng nhập email hợp lệ, ví dụ: anhtuan3675@outlook.com'
+    }
+};
+
+
+
+function getInvalidMessageWhenEmpty() {
+    switch (language) {
+        case 'vi': {
+            return 'Vui lòng điền vào trường này';
+        }
+
+        case 'en': default: {
+            return 'Please fill out this field';
+        }
+    }
+}
+
+function getInvalidMessage(id) {
+    return formInvalidMessages[id][language.split('&quote;')];
 }
 
 
+document.querySelectorAll('#inputs > *').forEach((el, index, parent) => {
 
-(function() {
+    el.oninput = function(e) {
+        el.setCustomValidity('');
+        el.checkValidity();
+    };
 
-    // const strings = [
-    //     "I am interested in freelance opportunities – especially ambitious or large projects. However, if you have other request or question, don’t hesitate to contact me using below form either."
-    // ];
 
-    // new TypeIt("span", {
-    //     // strings: strings,
-    //     speed: 20,
-    //     loop: false,
-    //   }).go();
+    el.oninvalid = function(e) {
+        if (el.value === '') {
+            el.setCustomValidity(getInvalidMessageWhenEmpty());
+        }
+        else {
+            el.setCustomValidity(getInvalidMessage(el.id));
+        }
+    };
 
-})();
+});
+
 
 
 
@@ -31,76 +69,24 @@ function submitForm() {
 // TweenMax.to('#normal', {
 //     scale: 1,
 //     duration: 1.25,
-//     ease: "expo.inOut"
-// });
-
-// TweenMax.from('#map', {
-//     scale: 0,
-//     duration: 0.5
-// });
-// TweenMax.to('#map', {
-//     scale: 1,
-//     duration: 1
+//     ease: "bounce.out"
 // });
 
 
 
-TweenMax.from('#txtName', {
-    y: 100,
-    opacity: 0,
-    delay: 0.1
-});
-TweenMax.to('#txtName', {
-    y: 0,
-    opacity: 1,
-    duration: 0.75,
-    delay: 0.1,
-    ease: "slow(0.7, 0.7, false)"
-});
-
-
-
-TweenMax.from('#txtEmail', {
-    y: 100,
-    opacity: 0,
-    delay: 0.3
-});
-TweenMax.to('#txtEmail', {
-    y: 0,
-    opacity: 1,
-    duration: 0.75,
-    delay: 0.3,
-    ease: "slow(0.7, 0.7, false)"
-});
-
-
-
-TweenMax.from('#txtSubject', {
-    y: 100,
-    opacity: 0,
-    delay: 0.5
-});
-TweenMax.to('#txtSubject', {
-    y: 0,
-    opacity: 1,
-    duration: 0.75,
-    delay: 0.5,
-    ease: "slow(0.7, 0.7, false)"
-});
-
-
-
-TweenMax.from('#txtMessage', {
-    y: 100,
-    opacity: 0,
-    delay: 0.7
-});
-TweenMax.to('#txtMessage', {
-    y: 0,
-    opacity: 1,
-    duration: 0.75,
-    delay: 0.7,
-    ease: "slow(0.7, 0.7, false)"
+document.querySelectorAll('#inputs > *').forEach((el, index, parent) => {
+    TweenMax.from(el, {
+        y: 100,
+        opacity: 0,
+        delay: index / 10,
+    });
+    TweenMax.to(el, {
+        y: 0,
+        opacity: 1,
+        duration: 0.75,
+        delay: index / 10,
+        ease: "slow(0.7, 0.7, false)"
+    });
 });
 
 
@@ -108,27 +94,26 @@ TweenMax.to('#txtMessage', {
 TweenMax.from('#btn-send', {
     y: 100,
     opacity: 0,
-    delay: 0.9
+    delay: 0.6
 });
 TweenMax.to('#btn-send', {
     y: 0,
     opacity: 1,
     duration: 0.75,
-    delay: 0.9,
+    delay: 0.6,
     ease: "slow(0.7, 0.7, false)"
 });
-
 
 
 TweenMax.from('#btn-open-map', {
     y: 100,
     opacity: 0,
-    delay: 0.9
+    delay: 0.6
 });
 TweenMax.to('#btn-open-map', {
     y: 0,
     opacity: 1,
     duration: 0.75,
-    delay: 0.9,
+    delay: 0.6,
     ease: "slow(0.7, 0.7, false)"
 });
