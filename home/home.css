@@ -1,5 +1,10 @@
 @import url(../libs/GoogleSansWebfont/stylesheet.css);
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lemonada:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -18,17 +23,15 @@
 #particle-js > #typing-text {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
+  left: 15%;
+  transform: translate(-15%, -50%);
+  width: 50%;
   text-align: center;
 }
 #particle-js > #typing-text .typing {
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.432);
+  font-family: 'Fredoka One', cursive;
   font-size: 32pt;
-}
-#particle-js > #typing-text .typing:after {
-  color: white;
 }
 
 #wave {
@@ -38,6 +41,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  background: linear-gradient(to top left, #ffffff00 40%, rgba(88, 192, 253, 0.664));
 }
 #wave:after {
   content: '';

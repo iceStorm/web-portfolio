@@ -7,7 +7,7 @@
 
 
 
-#middle {
+#middle > #content {
     display: grid;
     grid-template-columns: 1.5fr 2fr;
 }
@@ -68,7 +68,7 @@
             font-size: 16px;
             font-family: 'Google Sans';
 
-            background: rgba(255, 255, 255, 0.89);
+            background: rgba(255, 255, 255, 0.925);
             border: 1px solid rgb(197, 197, 197);
             border-radius: $form-radius;
 
@@ -113,6 +113,12 @@
                 color: white;
                 background: linear-gradient(to bottom right, $primary-color, rgb(74, 163, 252));
                 box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.404);
+
+
+                &:focus, &:active {
+                    outline: none;
+                    box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.9) inset;
+                }
             }
         }
     }

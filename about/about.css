@@ -1,4 +1,11 @@
-#middle {
+@import url(../libs/GoogleSansWebfont/stylesheet.css);
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lemonada:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+#middle > #content {
   padding-top: 150px !important;
   position: relative;
   overflow: hidden;
@@ -7,14 +14,14 @@
   background: white;
   color: #000;
 }
-#middle h1 {
+#middle > #content h1 {
   font-size: 30pt;
 }
-#middle > * {
+#middle > #content > * {
   position: relative;
   z-index: 99;
 }
-#middle #info {
+#middle > #content #info {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,18 +31,17 @@
   padding-right: 50px;
   text-align: center;
 }
-#middle #info h3 {
+#middle > #content #info h3 {
   margin: 20px 0 15px 0;
 }
-#middle #info img {
+#middle > #content #info img {
   width: 250px;
 }
-#middle #info > * {
+#middle > #content #info > * {
   position: relative;
   z-index: 3;
 }
-#middle #info:after {
-  content: '';
+#middle > #content #info-mongo-dots {
   position: absolute;
   top: 0;
   left: 0;
@@ -46,8 +52,7 @@
   background-size: 400px;
   background-position: center;
 }
-#middle #info:before {
-  content: '';
+#middle > #content #info-circle-bg {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -61,7 +66,7 @@
   background-origin: border-box;
   background-clip: content-box,border-box;
 }
-#middle #skills {
+#middle > #content #skills {
   padding-left: 50px;
   padding-right: 50px;
   display: flex;
@@ -69,7 +74,7 @@
   justify-content: center;
   align-items: center;
 }
-#middle #skills .skill-bar {
+#middle > #content #skills .skill-bar {
   width: 100%;
   height: 28px;
   margin-bottom: 15px;
@@ -80,7 +85,7 @@
   justify-content: flex-start;
   align-items: center;
 }
-#middle #skills .skill-bar-name {
+#middle > #content #skills .skill-bar-name {
   color: white;
   background: #2a6fdb;
   padding: 0 30px;
@@ -90,7 +95,7 @@
   justify-content: center;
   align-items: center;
 }
-#middle #skills .skill-bar-experience {
+#middle > #content #skills .skill-bar-experience {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -98,10 +103,10 @@
   height: 100%;
   text-align: right;
 }
-#middle #skills .skill-bar-experience .percents {
+#middle > #content #skills .skill-bar-experience .percents {
   background: #48d6d2;
 }
-#middle #skills .skill-bar-experience span {
+#middle > #content #skills .skill-bar-experience span {
   padding: 0 15px;
   display: flex;
   justify-content: center;

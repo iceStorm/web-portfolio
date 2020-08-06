@@ -1,12 +1,17 @@
 
 
-
-// TweenMax.to("#info-avatar", 1 / 4, {y:-50, ease:Power2.easeOut});
-// TweenMax.to("#info-avatar", 1 / 2, {y:0, ease:Bounce.easeOut, delay:1 / 4});
-
-
 TweenMax.to("#info-avatar", 1, {scale: 0, ease:Power2.easeOut});
 TweenMax.to("#info-avatar", 1, {scale: 1, ease:Bounce.easeOut, delay:1 / 4});
+
+// TweenMax.to("#info-circle-bg", 1, {scale: 0, ease:Power2.easeOut});
+// TweenMax.to("#info-circle-bg", 1, {scale: 1, ease:Bounce.easeOut, delay:1 / 6});
+
+
+// let tl = gsap.timeline();
+// tl.to("#info-circle-bg", 1, {scale: 0, ease:Power2.easeOut});
+// ti.to("#info-circle-bg", 1, {scale: 1, ease:Bounce.easeOut, delay:1 / 6});
+// tl.to("#info-circle-bg", 1, {transformOrigin: "-50% -50%", delay: 5});
+
 
 
 document.querySelectorAll('.skill-bar-experience').forEach((el, index, parent) => {

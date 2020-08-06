@@ -10,7 +10,6 @@ getScrewShape().forEach((value, index) => {
     el.childNodes.item(3).setAttribute("target", "_blank");
 
 
-
     TweenMax.from(el, {
         duration: 1,
         delay: delay,

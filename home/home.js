@@ -25,10 +25,10 @@ particlesJS.load('particle-js', './home/particle.json', function() {
     (function() {
         elementId = document.getElementById("typing");
 
-        let speed = 50;
+        let speed = 35;
         let cCounter = 0;
         let mStrings = Array.from(strings).join('\n');
-        console.log(mStrings);
+        // console.log(mStrings);
 
 
         setTimeout(function type() {

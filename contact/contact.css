@@ -1,12 +1,17 @@
 @import url(../libs/GoogleSansWebfont/stylesheet.css);
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lemonada:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-#middle {
+#middle > #content {
   display: grid;
   grid-template-columns: 1.5fr 2fr;
 }
@@ -45,7 +50,7 @@
 #normal form input, #normal form textarea {
   font-size: 16px;
   font-family: 'Google Sans';
-  background: rgba(255, 255, 255, 0.89);
+  background: rgba(255, 255, 255, 0.925);
   border: 1px solid #c5c5c5;
   border-radius: 4px;
   display: block;
@@ -81,6 +86,10 @@
   color: white;
   background: linear-gradient(to bottom right, #0044ff, #4aa3fc);
   box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.404);
+}
+#normal form div button:focus, #normal form div button:active {
+  outline: none;
+  box-shadow: 0 0 15px 0px rgba(0, 0, 0, 0.9) inset;
 }
 
 #map {

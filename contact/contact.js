@@ -62,15 +62,15 @@ document.querySelectorAll('#inputs > *').forEach((el, index, parent) => {
 
 
 
-// TweenMax.from('#normal', {
-//     scale: 0,
-//     duration: 0.5
-// });
-// TweenMax.to('#normal', {
-//     scale: 1,
-//     duration: 1.25,
-//     ease: "bounce.out"
-// });
+TweenMax.from('#map', {
+    scale: 0,
+    duration: 0.5
+});
+TweenMax.to('#map', {
+    scale: 1,
+    duration: 1.25,
+    ease: "power3.inOut"
+});
 
 
 
